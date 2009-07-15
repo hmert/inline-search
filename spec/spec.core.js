@@ -20,6 +20,12 @@ describe 'jQuery'
           items.get(1).should.be_hidden
           items.get(2).should.be_hidden
           items.get(3).should.be_hidden
+          
+          $.search(items, 'Foo', function(){ return false })
+          items.get(0).should.be_visible
+          items.get(1).should.be_visible
+          items.get(2).should.be_visible
+          items.get(3).should.be_visible
         end  
       end
       
