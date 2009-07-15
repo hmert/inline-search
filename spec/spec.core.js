@@ -57,6 +57,14 @@ describe 'jQuery'
     end
     
     describe '.fn.search()'
+      before_each
+        table = $(fixture('vehicles'))
+        th = table.children('th')
+        skyline = table.children('tr:nth-child(1)')
+        rx7 = table.children('tr:nth-child(2)')
+        supra = table.children('tr:nth-child(3)')
+      end
+      
       it 'should work'
         $(items).search('Holoway')
         items.get(0).should.be_visible
