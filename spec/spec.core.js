@@ -2,7 +2,7 @@
 describe 'jQuery'
   before_each
     users = elements(fixture('users'))
-    items = users.children('li')
+    items = users.find('li')
   end
   
   describe '.search()'
@@ -59,10 +59,10 @@ describe 'jQuery'
     describe '.fn.search()'
       before_each
         table = $(fixture('vehicles'))
-        th = table.children('th')
-        skyline = table.children('tr:nth-child(1)')
-        rx7 = table.children('tr:nth-child(2)')
-        supra = table.children('tr:nth-child(3)')
+        th = table.find('th')
+        skyline = table.find('tr:nth-child(1)')
+        rx7 = table.find('tr:nth-child(2)')
+        supra = table.find('tr:nth-child(3)')
       end
       
       it 'should work'
