@@ -57,12 +57,6 @@ describe 'jQuery'
     end
     
     describe '.fn.search()'
-      before_each
-        form = $(fixture('form'))
-        text = form.children('input[name=search]')
-        button = form.children('input[name=op]')
-      end
-      
       it 'should work'
         $(items).search('Holoway')
         items.get(0).should.be_visible
