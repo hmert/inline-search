@@ -13,6 +13,22 @@ describe 'jQuery'
     end
     
     describe 'filter'
+      it 'should with no input should show everything'
+        $.search(items, '', function(){ return true })
+        items.get(0).should.be_visible
+        items.get(1).should.be_visible
+        items.get(2).should.be_visible
+        items.get(3).should.be_visible
+      end
+      
+      it 'should with input consisting of whitespace should show everything'
+        $.search(items, '    ', function(){ return true })
+        items.get(0).should.be_visible
+        items.get(1).should.be_visible
+        items.get(2).should.be_visible
+        items.get(3).should.be_visible
+      end
+    
       describe 'by arbitrary function'
         it 'should work'
           $.search(items, 'Foo', function(){ return true })
