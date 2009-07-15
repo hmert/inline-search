@@ -89,6 +89,18 @@ describe 'jQuery'
         rx7.should.be_hidden
         supra.should.be_visible
       end
+      
+      describe 'lookup functions'
+        describe 'parent'
+          it 'should remove the filtered elements parent'
+            $('tr td:nth-child(1)', table).search('Toyota', 'by keyword', { remove : 'parent' })
+            th.should.be_visible
+            skyline.should.be_hidden
+            rx7.should.be_hidden
+            supra.should.be_visible
+          end
+        end
+      end
     end
     
   end
