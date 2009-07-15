@@ -35,6 +35,30 @@ When the filter returns true the element will be filtered.
   $('.users li').search('Bob', function(search){
     return ! $.inArray(this.text().split(' '), search)
   })
+  
+In more complex cases you may need to filter on child elements,
+while hiding parent elements when filtered. This is possible using
+the 'remove' option. The 'remove' function is called in context to
+the element being filtered on, which in this case is the 'td.first-name'
+so we remove it's parent which will be a 'tr', since we would not
+want to simply hide the 'td'.
+
+  var parent = function(){ return this.parent() }
+  $('table.users td.first-name').search('Tyler', 'by keyword', { remove : parent })
+  
+Lookup functions are also built into Inline Search, so instead of creating parent
+like we did above, simply use 'parent'.
+
+  $('table.users td.first-name').search('Tyler', 'by keyword', { remove : 'parent' })
+  
+== Core filters
+
+  - 'by substring' : default
+  - 'by keyword'   : entire words
+  
+== Core lookup functions
+
+  - 'parent' : elements parent
 
 == License 
 
