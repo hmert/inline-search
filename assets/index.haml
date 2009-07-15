@@ -22,12 +22,26 @@
     %p
       Inline Search is a simple, small, and effective library for filtering DOM elements in various ways.
       
-    %h2 Demo
-    %div#demo= read 'vehicles.html'
-    %div#demo-search
+    %h2 Demo - Custom Filter
+    %div.demo= read 'vehicles.html'
+    %div.demo-search
       %input{ :type => :text, :name => :keywords }
       %input{ :type => :button, :name => :search, :value => 'Search' }
- 
+    
+    %div.clear
+    %h2 Demo - Substring Filter
+      
+    %div.demo= read 'users.html'
+    %div.demo-search
+      %input{ :type => :text, :name => :keywords2 }
+      
+    %div.clear
+    %h2 Demo - Keyword Filter
+      
+    %div.demo= read 'users2.html'
+    %div.demo-search
+      %input{ :type => :text, :name => :keywords3 }
+              
     .footer
       this mini site brought to you by : 
       %a{ :href => project_url('visionmedia', 'mini') } visionmedia/mini

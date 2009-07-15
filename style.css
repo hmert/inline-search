@@ -75,10 +75,14 @@ table {
   table th {
     text-align: left; }
 
-#demo {
+.clear {
+  width: 100%;
+  clear: both; }
+
+.demo {
   float: left;
   width: 50%; }
 
-#demo-search {
+.demo-search {
   float: right;
   width: 50%; }
