@@ -56,5 +56,13 @@ describe 'jQuery'
       end
     end
     
+    describe '.fn.search()'
+      before_each
+        form = $(fixture('form'))
+        text = form.children('input[name=search]')
+        button = form.children('input[name=op]')
+      end
+    end
+    
   end
 end
