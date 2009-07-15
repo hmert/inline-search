@@ -63,11 +63,19 @@ describe 'jQuery'
         button = form.children('input[name=op]')
       end
       
-      it 'should description'
+      it 'should work'
         $(items).search('Holoway')
         items.get(0).should.be_visible
         items.get(1).should.be_visible
         items.get(2).should.be_hidden
+        items.get(3).should.be_hidden
+      end
+      
+      it 'should work with other filters'
+        $(items).search('Alan Taylor', 'by keyword')
+        items.get(0).should.be_hidden
+        items.get(1).should.be_visible
+        items.get(2).should.be_visible
         items.get(3).should.be_hidden
       end
     end
