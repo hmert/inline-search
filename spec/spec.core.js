@@ -7,6 +7,16 @@ describe 'jQuery'
     end
     
     describe 'filter'
+      describe 'by arbitrary function'
+        it 'should work'
+          $.search(items, 'Foo', function(){ return true })
+          items.get(0).should.be_hidden
+          items.get(1).should.be_hidden
+          items.get(2).should.be_hidden
+          items.get(3).should.be_hidden
+        end  
+      end
+      
       describe 'by substring'
         it 'should be the default'
           $.search(items, 'Holoway')
