@@ -1,11 +1,11 @@
 
 describe 'jQuery'
+  before_each
+    users = elements(fixture('users'))
+    items = users.children('li')
+  end
+  
   describe '.search()'
-    before_each
-      users = elements(fixture('users'))
-      items = users.children('li')
-    end
-    
     describe '.version'
       it 'should be a triple'
         $.search.version.should.match(/\d+\.\d+\.\d+/)
