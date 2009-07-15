@@ -1,5 +1,15 @@
 
 $(function(){
+  var speed = 300
+  
+  $('.source pre').hide()
+  
+  $('.source a').toggle(function(){
+    $(this).next('pre').slideDown(speed)
+  }, function(){
+    $(this).next('pre').slideUp(speed)
+  })
+  
   $('input[name=search]').click(function(){
     var keywords = $('input[name=keywords]').val()
     $('table.vehicles tbody tr').search(keywords, function(keywords){

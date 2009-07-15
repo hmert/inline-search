@@ -23,25 +23,35 @@
       Inline Search is a simple, small, and effective library for filtering DOM elements in various ways.
       
     %h2 Demo - Custom Filter
+    %p.description Searches each row's cell for a matching substring. Try 'Sky'
     %div.demo= read 'vehicles.html'
     %div.demo-search
       %input{ :type => :text, :name => :keywords }
       %input{ :type => :button, :name => :search, :value => 'Search' }
+    %div.source
+      %a{ :href => '#', :class => 'view-source' } View Source
+      %pre= read('demo-1.js').escape_html
     
     %div.clear
     %h2 Demo - Substring Filter
-      
+    %p.description Searches each list item for a substring. Try 'Joe'
     %div.demo= read 'users.html'
     %div.demo-search
       %input{ :type => :text, :name => :keywords2 }
-      
+    %div.source
+      %a{ :href => '#', :class => 'view-source' } View Source
+      %pre= read('demo-2.js').escape_html
+            
     %div.clear
     %h2 Demo - Keyword Filter
-      
+    %p.description Searches each list item for a matching keyword. Try 'Joe'
     %div.demo= read 'users2.html'
     %div.demo-search
       %input{ :type => :text, :name => :keywords3 }
-              
+    %div.source
+      %a{ :href => '#', :class => 'view-source' } View Source
+      %pre= read('demo-3.js').escape_html
+                    
     .footer
       this mini site brought to you by : 
       %a{ :href => project_url('visionmedia', 'mini') } visionmedia/mini

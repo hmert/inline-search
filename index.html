@@ -26,6 +26,7 @@
       Inline Search is a simple, small, and effective library for filtering DOM elements in various ways.
     </p>
     <h2>Demo - Custom Filter</h2>
+    <p class='description'>Searches each row's cell for a matching substring. Try 'Sky'</p>
     <div class='demo'>
       <table class="vehicles">
         <thead>
@@ -46,8 +47,13 @@
       <input name='keywords' type='text' />
       <input name='search' type='button' value='Search' />
     </div>
+    <div class='source'>
+      <a class='view-source' href='#'>View Source</a>
+      <pre>$(function(){&#x000A;  $(&#39;input[name=search]&#39;).click(function(){&#x000A;    var keywords = $(&#39;input[name=keywords]&#39;).val()&#x000A;    $(&#39;table.vehicles tbody tr&#39;).search(keywords, function(keywords){&#x000A;      var matches = $.map(this.children(&#39;td&#39;), function(td){&#x000A;        return $(td).text().match(keywords)&#x000A;      })&#x000A;      return !matches.length&#x000A;    })&#x000A;  })&#x000A;})</pre>
+    </div>
     <div class='clear'></div>
     <h2>Demo - Substring Filter</h2>
+    <p class='description'>Searches each list item for a substring. Try 'Joe'</p>
     <div class='demo'>
       <ul class="users">
         <li>Scott</li>
@@ -60,8 +66,13 @@
     <div class='demo-search'>
       <input name='keywords2' type='text' />
     </div>
+    <div class='source'>
+      <a class='view-source' href='#'>View Source</a>
+      <pre>$(function() {&#x000A;  $(&#39;input[name=keywords]&#39;).keyup(function(){&#x000A;    $(&#39;ul.users li&#39;).search($(this).val())&#x000A;  })&#x000A;})</pre>
+    </div>
     <div class='clear'></div>
     <h2>Demo - Keyword Filter</h2>
+    <p class='description'>Searches each list item for a matching keyword. Try 'Joe'</p>
     <div class='demo'>
       <ul class="users2">
         <li>Scott</li>
@@ -73,6 +84,10 @@
     </div>
     <div class='demo-search'>
       <input name='keywords3' type='text' />
+    </div>
+    <div class='source'>
+      <a class='view-source' href='#'>View Source</a>
+      <pre>$(function() {&#x000A;  $(&#39;input[name=keywords]&#39;).keyup(function(){&#x000A;    $(&#39;ul.users li&#39;).search($(this).val(), &#39;by keyword&#39;)&#x000A;  })&#x000A;})</pre>
     </div>
     <div class='footer'>
       this mini site brought to you by :

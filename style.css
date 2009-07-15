@@ -86,3 +86,15 @@ table {
 .demo-search {
   float: right;
   width: 50%; }
+
+p.description {
+  margin: 0;
+  padding: 0 0 15px 0;
+  font-size: 12px; }
+
+div.source {
+  padding: 20px 0;
+  width: 100%;
+  clear: both; }
+  div.source a.view-source {
+    font-size: 12px; }
