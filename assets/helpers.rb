@@ -14,4 +14,4 @@ def read path
   File.read File.join(File.dirname(__FILE__), 'data', path)
 end
 
-PROJECT_URL = project_url('username', 'project')
+PROJECT_URL = project_url('visionmedia', 'inline-search')
