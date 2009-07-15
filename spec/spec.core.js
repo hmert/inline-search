@@ -82,9 +82,8 @@ describe 'jQuery'
       end
       
       it 'should allow a function to determine what should be filtered'
-        $(table, 'tr td:nth-child(1)').search('Toyota', 'by keyword', function(){
-          return this.parent()
-        })
+        parent = function(){ return this.parent() }
+        $('tr td:nth-child(1)', table).search('Toyota', 'by keyword', { remove : parent })
         th.should.be_visible
         skyline.should.be_hidden
         rx7.should.be_hidden
