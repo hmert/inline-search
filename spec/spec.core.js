@@ -98,13 +98,17 @@ describe 'jQuery'
       items.get(3).should.be_hidden
     end
     
-    it 'should allow a function to determine what should be filtered'
-      parent = function(){ return this.parent() }
-      $('tr td:nth-child(1)', table).search('Toyota', 'by keyword', { remove : parent })
-      th.should.be_visible
-      skyline.should.be_hidden
-      rx7.should.be_hidden
-      supra.should.be_visible
+    describe 'options'
+      describe 'remove'
+        it 'should lookup the element to remove'
+          var parent = function(){ return this.parent() }
+          $('tr td:nth-child(1)', table).search('Toyota', 'by keyword', { remove : parent })
+          th.should.be_visible
+          skyline.should.be_hidden
+          rx7.should.be_hidden
+          supra.should.be_visible
+        end
+      end
     end
     
     describe 'lookup functions'
