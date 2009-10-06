@@ -90,6 +90,10 @@ describe 'jQuery'
       items.get(3).should.be_hidden
     end
     
+    it 'should return a jQuery collection'
+      $(items).should.be_an_instance_of jQuery
+    end
+    
     it 'should work with other filters'
       $(items).search('Alan Taylor', 'by keyword')
       items.get(0).should.be_hidden
