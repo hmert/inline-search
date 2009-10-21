@@ -107,10 +107,10 @@ describe 'jQuery'
         it 'should lookup the element to remove'
           var parent = function(){ return this.parent() }
           $('tr td:nth-child(1)', table).search('Toyota', 'by keyword', { remove : parent })
-          th.should.be_visible
-          skyline.should.be_hidden
-          rx7.should.be_hidden
-          supra.should.be_visible
+          th.is(':visible').should.be_true
+          skyline.is(':hidden').should.be_true
+          rx7.is(':hidden').should.be_true
+          supra.is(':visible').should.be_true
         end
       end
     end
@@ -120,7 +120,7 @@ describe 'jQuery'
         it 'should remove the filtered elements parent'
           $('tr td:nth-child(1)', table).search('Toyota', 'by keyword', { remove : 'parent' })
           th.should.be_visible
-          skyline.should.be_hidden
+          skyline.is(':hidden').should.be_true
           rx7.should.be_hidden
           supra.should.be_visible
         end
