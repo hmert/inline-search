@@ -1,10 +1,10 @@
 
-= jQuery Inline Search
+# jQuery Inline Search
 
 Search inline elements using a tiny, fast, and effective jQuery plugin.
 Tested with jQuery 1.3.1 and the [JSpec JavaScript BDD Framework](http://jspec.info)
 
-== Examples
+## Examples
 
   <ul class="users">
     <li>Joe</li>
@@ -16,52 +16,52 @@ Tested with jQuery 1.3.1 and the [JSpec JavaScript BDD Framework](http://jspec.i
 The following will hide all users li items
 other than Joe and Joey.
 
-  $('.users li').search('Joe')
+    $('.users li').search('Joe')
   
 The search below will show only Joe since
 they are filtered by keyword.
 
-  $('.users li').search('Joe', 'by keyword')
+    $('.users li').search('Joe', 'by keyword')
   
 Joe and Scott will be shown:
 
-  $('.users li').search('Joe Scott', 'by keyword')
+    $('.users li').search('Joe Scott', 'by keyword')
   
 Alternatively you may create your own filters, by
 using an anonymous function closure, or registering
-it with $.search.filters .
+it with **$.search.filters**.
 
 When the filter returns true the element will be filtered.
 
-  $('.users li').search('Bob', function(search){
-    return ! $.inArray(this.text().split(' '), search)
-  })
+    $('.users li').search('Bob', function(search){
+      return ! $.inArray(this.text().split(' '), search)
+    })
   
 In more complex cases you may need to filter on child elements,
 while hiding parent elements when filtered. This is possible using
-the 'remove' option. The 'remove' function is called in context to
-the element being filtered on, which in this case is the 'td.first-name'
-so we remove it's parent which will be a 'tr', since we would not
-want to simply hide the 'td'.
+the _'remove'_ option. The _'remove'_ function is called in context to
+the element being filtered on, which in this case is the _'td.first-name'_
+so we remove it's parent which will be a _'tr'_, since we would not
+want to simply hide the _'td'_.
 
-  var parent = function(){ return this.parent() }
-  $('table.users td.first-name').search('Tyler', 'by keyword', { remove : parent })
+    var parent = function(){ return this.parent() }
+    $('table.users td.first-name').search('Tyler', 'by keyword', { remove : parent })
   
 Lookup functions are also built into Inline Search, so instead of creating parent
 like we did above, simply use 'parent'.
 
-  $('table.users td.first-name').search('Tyler', 'by keyword', { remove : 'parent' })
+    $('table.users td.first-name').search('Tyler', 'by keyword', { remove : 'parent' })
   
-== Core filters
+## Core filters
 
-  - 'by substring' : default
-  - 'by keyword'   : entire words
+    - 'by substring' : default
+    - 'by keyword'   : entire words
   
-== Core lookup functions
+## Core lookup functions
 
-  - 'parent' : elements parent
+    - 'parent' : elements parent
 
-== License 
+## License 
 
 (The MIT License)
 
