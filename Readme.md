@@ -2,30 +2,36 @@
 # jQuery Inline Search
 
 Search inline elements using a tiny, fast, and effective jQuery plugin.
-Tested with jQuery 1.3.1 and the [JSpec JavaScript BDD Framework](http://jspec.info)
 
 ## Examples
-
+```html
   <ul class="users">
     <li>Joe</li>
     <li>Bob</li>
     <li>Joey</li>
     <li>Scott</li>
   </ul>
-  
+```
+
 The following will hide all users li items
 other than Joe and Joey.
 
+```javascript
     $('.users li').search('Joe')
-  
+```
+
 The search below will show only Joe since
 they are filtered by keyword.
 
+```javascript
     $('.users li').search('Joe', 'by keyword')
-  
+```
+
 Joe and Scott will be shown:
 
+```javascript
     $('.users li').search('Joe Scott', 'by keyword')
+```
   
 Alternatively you may create your own filters, by
 using an anonymous function closure, or registering
@@ -33,9 +39,11 @@ it with **$.search.filters**.
 
 When the filter returns true the element will be filtered.
 
+```javascript
     $('.users li').search('Bob', function(search){
       return ! $.inArray(this.text().split(' '), search)
     })
+```
   
 In more complex cases you may need to filter on child elements,
 while hiding parent elements when filtered. This is possible using
@@ -44,14 +52,18 @@ the element being filtered on, which in this case is the _'td.first-name'_
 so we remove it's parent which will be a _'tr'_, since we would not
 want to simply hide the _'td'_.
 
+```javascript
     var parent = function(){ return this.parent() }
     $('table.users td.first-name').search('Tyler', 'by keyword', { remove : parent })
-  
+```
+ 
 Lookup functions are also built into Inline Search, so instead of creating parent
 like we did above, simply use 'parent'.
 
+```javascript
     $('table.users td.first-name').search('Tyler', 'by keyword', { remove : 'parent' })
-  
+```
+
 ## Core filters
 
     - 'by substring' : default
