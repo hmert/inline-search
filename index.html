@@ -1,97 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!doctype html>
 <html>
   <head>
-    <title>jQuery Inline Search</title>
-    <link href='style.css' rel='stylesheet' />
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
-    <script src='assets/data/inline-search.js'></script>
-    <script src='assets/data/demo.js'></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Inline-search by hmert</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-    <a href='http://github.com/visionmedia/inline-search'>
-      <img alt='Fork me on GitHub' id='ribbon' src='http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' />
-    </a>
+    <div class="wrapper">
+      <header>
+        <h1>Inline-search</h1>
+        <p>jQuery inline search plugin</p>
+
+        <p class="view"><a href="https://github.com/hmert/inline-search">View the Project on GitHub <small>hmert/inline-search</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/hmert/inline-search/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/hmert/inline-search/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/hmert/inline-search">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/hmert">hmert</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
   </body>
-  <div id='container'>
-    <div id='download'>
-      <a href='http://github.com/visionmedia/inline-search/downloads'>
-        <img src='http://github.com/images/modules/download/zip.png' />
-      </a>
-      <a href='http://github.com/visionmedia/inline-search/downloads'>
-        <img src='http://github.com/images/modules/download/tar.png' />
-      </a>
-    </div>
-    <h1>Inline Search <em>for jQuery</em></h1>
-    <p>
-      Inline Search is a simple, small, and effective library for filtering DOM elements in various ways.
-    </p>
-    <h2>Demo - Custom Filter</h2>
-    <p class='description'>Searches each row's cell for a matching substring. Try 'Sky'</p>
-    <div class='demo'>
-      <table class="vehicles">
-        <thead>
-          <tr>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Nissan</td><td>Skyline</td><td>$14,000</td></tr>
-          <tr><td>Mazda</td><td>RX7</td><td>$8,000</td></tr>
-          <tr><td>Toyota</td><td>Supra</td><td>$8,000</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class='demo-search'>
-      <input name='keywords' type='text' />
-      <input name='search' type='button' value='Search' />
-    </div>
-    <div class='source'>
-      <a class='view-source' href='#'>View Source</a>
-      <pre>$(function(){&#x000A;  $(&#39;input[name=search]&#39;).click(function(){&#x000A;    var keywords = $(&#39;input[name=keywords]&#39;).val()&#x000A;    $(&#39;table.vehicles tbody tr&#39;).search(keywords, function(keywords){&#x000A;      var matches = $.map(this.children(&#39;td&#39;), function(td){&#x000A;        return $(td).text().match(keywords)&#x000A;      })&#x000A;      return !matches.length&#x000A;    })&#x000A;  })&#x000A;})</pre>
-    </div>
-    <div class='clear'></div>
-    <h2>Demo - Substring Filter</h2>
-    <p class='description'>Searches each list item for a substring. Try 'Joe'</p>
-    <div class='demo'>
-      <ul class="users">
-        <li>Scott</li>
-        <li>Bob</li>
-        <li>Joe</li>
-        <li>Joey</li>
-        <li>Anna</li>
-      </ul>
-    </div>
-    <div class='demo-search'>
-      <input name='keywords2' type='text' />
-    </div>
-    <div class='source'>
-      <a class='view-source' href='#'>View Source</a>
-      <pre>$(function() {&#x000A;  $(&#39;input[name=keywords]&#39;).keyup(function(){&#x000A;    $(&#39;ul.users li&#39;).search($(this).val())&#x000A;  })&#x000A;})</pre>
-    </div>
-    <div class='clear'></div>
-    <h2>Demo - Keyword Filter</h2>
-    <p class='description'>Searches each list item for a matching keyword. Try 'Joe'</p>
-    <div class='demo'>
-      <ul class="users2">
-        <li>Scott</li>
-        <li>Bob</li>
-        <li>Joe</li>
-        <li>Joey</li>
-        <li>Anna</li>
-      </ul>
-    </div>
-    <div class='demo-search'>
-      <input name='keywords3' type='text' />
-    </div>
-    <div class='source'>
-      <a class='view-source' href='#'>View Source</a>
-      <pre>$(function() {&#x000A;  $(&#39;input[name=keywords]&#39;).keyup(function(){&#x000A;    $(&#39;ul.users li&#39;).search($(this).val(), &#39;by keyword&#39;)&#x000A;  })&#x000A;})</pre>
-    </div>
-    <div class='footer'>
-      this mini site brought to you by :
-      <a href='http://github.com/visionmedia/mini'>visionmedia/mini</a>
-    </div>
-  </div>
 </html>
